@@ -1,64 +1,171 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sardhara Jesil - Resume</title>
     <style>
-        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 20px; border: 1px solid #eee; }
-        h1 { text-align: center; text-transform: uppercase; margin-bottom: 5px; color: #000; }
-        .subtitle { text-align: center; font-weight: bold; margin-bottom: 10px; color: #555; }
-        .contact-info { text-align: center; font-size: 14px; margin-bottom: 20px; border-bottom: 2px solid #333; padding-bottom: 10px; }
-        h3 { border-bottom: 1px solid #888; text-transform: uppercase; margin-top: 20px; font-size: 18px; }
+        /* Color Variables */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --header-color: #000000;
+            --accent-color: #2563eb;
+            --border-color: #e5e7eb;
+            --section-bg: #f3f4f6;
+        }
+
+        /* Dark Mode Colors */
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --header-color: #ffffff;
+            --accent-color: #38bdf8;
+            --border-color: #334155;
+            --section-bg: #1e293b;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Fixed Toggle Button Style */
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            cursor: pointer;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.2s;
+        }
+        #theme-toggle:active { transform: scale(0.95); }
+
+        h1 { text-align: center; text-transform: uppercase; color: var(--header-color); margin-bottom: 5px; }
+        .subtitle { text-align: center; font-weight: bold; color: var(--accent-color); margin-bottom: 20px; font-size: 1.2rem; }
+        
+        .contact-info { 
+            text-align: center; 
+            font-size: 14px; 
+            margin-bottom: 30px; 
+            border-bottom: 2px solid var(--accent-color); 
+            padding-bottom: 15px; 
+        }
+
+        h3 { 
+            border-left: 5px solid var(--accent-color);
+            text-transform: uppercase; 
+            margin-top: 30px; 
+            color: var(--header-color);
+            background-color: var(--section-bg);
+            padding: 10px 15px;
+            border-radius: 0 5px 5px 0;
+        }
+
         ul { padding-left: 20px; }
-        li { margin-bottom: 5px; }
-        a { color: #0044cc; text-decoration: none; }
-        .section-content { margin-left: 5px; }
+        li { margin-bottom: 10px; }
+        a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
+
+        .project-card {
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--section-bg);
+            margin: 15px 0;
+        }
     </style>
 </head>
 <body>
 
-    <h1>SARDHARA JESIL</h1>
-    <div class="subtitle">Full Stack Developer</div>
-    
-    <div class="contact-info">
-        Chalala Amreli, Gujarat | +91 7779991016 | 
-        <a href="mailto:sardharabhai7@gmail.com">sardharabhai7@gmail.com</a><br>
-        <a href="https://www.linkedin.com/in/sardhara-bhai-bb3a5a385?utm_source=share_via&utm_content=profile&utm_medium=member_android">LinkedIn Profile</a>
-    </div>
+    <button id="theme-toggle">🌙 Dark Mode</button>
 
-    <h3>Career Objective</h3>
-    <div class="section-content">
-        Dynamic and passionate aspiring Full Stack Developer with a strong foundation in modern web technologies. Skilled in building responsive and scalable web applications using PHP, Django, and MySQL. Eager to learn new technologies and contribute effectively to innovative development teams.
-    </div>
+    <header>
+        <h1>SARDHARA JESIL</h1>
+        <div class="subtitle">Full Stack Developer</div>
+        <div class="contact-info">
+            📍 Chalala Amreli, Gujarat | 📞 +91 7779991016<br>
+            📧 <a href="mailto:sardharabhai7@gmail.com">sardharabhai7@gmail.com</a> | 
+            🔗 <a href="https://www.linkedin.com/in/sardhara-bhai-bb3a5a385?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn Profile</a>
+        </div>
+    </header>
 
-    <h3>Technical Skills</h3>
-    <ul>
-        <li><strong>Backend Development:</strong> PHP, Django</li>
-        <li><strong>Database:</strong> MySQL</li>
-        <li><strong>Frontend:</strong> HTML, CSS, CSS3, Bootstrap</li>
-        <li><strong>Web Skills:</strong> Responsive Design, UI Development</li>
-        <li><strong>Core Skills:</strong> Problem Solving, Debugging, Basic Git</li>
-    </ul>
-
-    <h3>Projects</h3>
-    <div class="section-content">
-        <strong>Gym Management System</strong>
+    <section>
+        <h3>Technical Skills</h3>
         <ul>
-            <li>Developed a full-stack web application to manage memberships, trainer schedules, and payments.</li>
-            <li><strong>Tech Stack:</strong> Python, Django, MySQL, Bootstrap.</li>
+            <li><strong>Backend:</strong> PHP, Django, Python</li>
+            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), Bootstrap</li>
+            <li><strong>Database:</strong> MySQL</li>
+            <li><strong>Tools:</strong> Git, GitHub, Responsive Design</li>
         </ul>
-    </div>
+    </section>
 
-    <h3>Education & Certifications</h3>
-    <ul>
-        <li><strong>Bachelor of Computer Application (BCA)</strong> | Kamani Science College (2023–2026)</li>
-        <li><strong>Commerce High School</strong> | Chirag School of Science (Graduated 2023)</li>
-    </ul>
+    <section>
+        <h3>Projects</h3>
+        <div class="project-card">
+            <strong>🏋️ Gym Management System</strong>
+            <ul>
+                <li>Tech Stack: Django, MySQL, Bootstrap, JavaScript</li>
+                <li>Developed a full system for membership and trainer management.</li>
+            </ul>
+        </div>
+    </section>
 
-    <h3>Languages</h3>
-    <ul>
-        <li>English, Hindi, Gujarati</li>
-    </ul>
+    <section>
+        <h3>Education</h3>
+        <ul>
+            <li><strong>BCA</strong> | Kamani Science College (2023–2026)</li>
+            <li><strong>HSC</strong> | Chirag School of Science (2023)</li>
+        </ul>
+    </section>
 
+    <script>
+        // Get the button and the html element
+        const themeBtn = document.getElementById("theme-toggle");
+        const htmlDoc = document.documentElement;
+
+        // Function to set button text
+        function setButtonText(isDark) {
+            themeBtn.innerText = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+        }
+
+        // Check for saved theme in localStorage
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme === "dark") {
+            htmlDoc.setAttribute("data-theme", "dark");
+            setButtonText(true);
+        }
+
+        // Add Click Event Listener
+        themeBtn.onclick = function() {
+            // Check current status
+            const isDark = htmlDoc.getAttribute("data-theme") === "dark";
+            
+            if (isDark) {
+                // Switch to Light
+                htmlDoc.removeAttribute("data-theme");
+                localStorage.setItem("theme", "light");
+                setButtonText(false);
+            } else {
+                // Switch to Dark
+                htmlDoc.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+                setButtonText(true);
+            }
+        };
+    </script>
 </body>
 </html>
